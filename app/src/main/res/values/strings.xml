@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Aldo_TIE_Pertemuan3</string>
+    <string name="deskripsi">
+        Selamat datang di aplikasi mobile pertama saya
+    </string>
+    <string name="verif">
+        Verification
+    </string>
+</resources>
