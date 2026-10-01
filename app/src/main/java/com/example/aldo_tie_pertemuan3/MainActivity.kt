@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.Pertemuan4.FourthActivity
+import com.example.aldo_tie_pertemuan3.Pertemuan5.FifthActivity
 import com.example.aldo_tie_pertemuan3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,5 +30,10 @@ class MainActivity : AppCompatActivity() {
             i.putExtra("age", 25)
             startActivity(i)
         }
+        binding.btnP5.setOnClickListener {
+            startActivity(Intent(this, FifthActivity::class.java))
+        }
+        val i = Intent(this@MainActivity, FifthActivity::class.java)
+        startActivity(i)
     }
 }

@@ -1,48 +1,29 @@
-package com.example.aldo_tie_pertemuan3.Pertemuan3
+package com.example.aldo_tie_pertemuan3.Pertemuan5
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.R
-import com.example.aldo_tie_pertemuan3.databinding.ActivityThirdBinding
+import com.example.aldo_tie_pertemuan3.databinding.ActivityFifthBinding
 
-class ThirdActivity : AppCompatActivity() {
+class FifthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityThirdBinding
-
+    private lateinit var binding: ActivityFifthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        binding = ActivityFifthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-
-        // Inisialisasi komponen
-        val inputNoTujuan: EditText = findViewById(R.id.inputNoTujuan)
-        val btnKirim: Button = findViewById(R.id.btnKirim)
-
-        binding.btnKirim.setOnClickListener {
-//Mengambil value dari inputNama dan menampilkan di Logcat
-            val nomor = binding.inputNoTujuan.text
-            Log.i("Klik btnKirim","Tombol berhasil di tekan. Isi dari inputNoTujuan = $nomor")
-
-            Toast.makeText(this, "Pesan berhasil dikirim ke $nomor", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, ThirdResultActivity::class.java)
-            startActivity(intent)
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
@@ -50,7 +31,15 @@ class ThirdActivity : AppCompatActivity() {
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+    binding.btnWebView.setOnClickListener {
+        startActivity(Intent(this, WebViewActivity::class.java))
+    }
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -58,8 +47,18 @@ class ThirdActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
-
+            R.id.action_search -> {
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
+
         }
+
     }
+
 }

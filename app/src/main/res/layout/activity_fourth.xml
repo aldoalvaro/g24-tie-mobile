@@ -67,8 +67,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnShowAlertDialog" />
 
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
     </com.google.android.material.card.MaterialCardView>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@android:color/white"
+        app:titleTextColor="@android:color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>
