@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.Pertemuan4.FourthActivity
 import com.example.aldo_tie_pertemuan3.Pertemuan5.FifthActivity
 import com.example.aldo_tie_pertemuan3.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +34,30 @@ class MainActivity : AppCompatActivity() {
         binding.btnP5.setOnClickListener {
             startActivity(Intent(this, FifthActivity::class.java))
         }
-        val i = Intent(this@MainActivity, FifthActivity::class.java)
-        startActivity(i)
+
+        // Akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin ingin logout?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    // Hapus semua data sharedPreferences (isLogin, username)
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
+                .show()
+        }
+
+        // Dinonaktifkan: otomatis membuka FifthActivity setiap MainActivity dibuka
+        // (mengganggu alur Splash -> Auth -> Main). Tombol "Pertemuan5" tetap berfungsi.
+        // val i = Intent(this@MainActivity, FifthActivity::class.java)
+        // startActivity(i)
     }
 }
