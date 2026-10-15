@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.Pertemuan4.FourthActivity
 import com.example.aldo_tie_pertemuan3.Pertemuan5.FifthActivity
+import com.example.aldo_tie_pertemuan3.Pertemuan7.SeventhActivity
 import com.example.aldo_tie_pertemuan3.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnP5.setOnClickListener {
             startActivity(Intent(this, FifthActivity::class.java))
         }
+        binding.btnToSeventh.setOnClickListener {
+            startActivity(Intent(this, SeventhActivity::class.java))
+        }
 
         // Akses "user_pref"
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
         }
+
 
         // Dinonaktifkan: otomatis membuka FifthActivity setiap MainActivity dibuka
         // (mengganggu alur Splash -> Auth -> Main). Tombol "Pertemuan5" tetap berfungsi.
