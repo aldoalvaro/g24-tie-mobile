@@ -1,7 +1,6 @@
-package com.example.aldo_tie_pertemuan3.Pertemuan3
+package com.example.aldo_tie_pertemuan3.Home.Pertemuan2
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -13,36 +12,35 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.R
+import com.example.aldo_tie_pertemuan3.R.id
+import com.example.aldo_tie_pertemuan3.databinding.ActivitySecondBinding
 import com.example.aldo_tie_pertemuan3.databinding.ActivityThirdBinding
 
-class ThirdActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
 
-    private lateinit var binding: ActivityThirdBinding
-
+    private lateinit var binding: ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
         // Inisialisasi komponen
-        val inputNoTujuan: EditText = findViewById(R.id.inputNoTujuan)
-        val btnKirim: Button = findViewById(R.id.btnKirim)
+        val inputNama: EditText = findViewById(id.inputNama)
+        val btnSubmit: Button = findViewById(id.btnSubmit)
 
-        binding.btnKirim.setOnClickListener {
+        btnSubmit.setOnClickListener {
 //Mengambil value dari inputNama dan menampilkan di Logcat
-            val nomor = binding.inputNoTujuan.text
-            Log.i("Klik btnKirim","Tombol berhasil di tekan. Isi dari inputNoTujuan = $nomor")
+            val nama = inputNama.text
+            Log.i("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
 
-            Toast.makeText(this, "Pesan berhasil dikirim ke $nomor", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, ThirdResultActivity::class.java)
-            startActivity(intent)
+                    Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit", Toast.LENGTH_SHORT).show()
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
@@ -51,6 +49,7 @@ class ThirdActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

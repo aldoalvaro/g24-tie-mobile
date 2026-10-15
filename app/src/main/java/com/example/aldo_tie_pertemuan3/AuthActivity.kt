@@ -39,7 +39,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
-                startActivity(Intent(this@AuthActivity, MainActivity::class.java))
+                startActivity(Intent(this@AuthActivity, BaseActivity::class.java))
                 finish()
             } else {
                 MaterialAlertDialogBuilder(this)

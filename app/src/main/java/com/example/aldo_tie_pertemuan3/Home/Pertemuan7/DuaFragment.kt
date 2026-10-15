@@ -1,4 +1,4 @@
-package com.example.aldo_tie_pertemuan3.Pertemuan7
+package com.example.aldo_tie_pertemuan3.Home.Pertemuan7
 
 import android.os.Bundle
 import android.view.LayoutInflater

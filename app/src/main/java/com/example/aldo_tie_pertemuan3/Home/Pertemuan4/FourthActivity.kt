@@ -1,6 +1,5 @@
-package com.example.aldo_tie_pertemuan3.Pertemuan4
+package com.example.aldo_tie_pertemuan3.Home.Pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -8,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.aldo_tie_pertemuan3.MainActivity
 import com.example.aldo_tie_pertemuan3.R
 import com.example.aldo_tie_pertemuan3.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
