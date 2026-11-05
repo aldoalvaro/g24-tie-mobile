@@ -12,7 +12,7 @@ import com.example.aldo_tie_pertemuan3.Home.Pertemuan5.FifthActivity
 import com.example.aldo_tie_pertemuan3.Home.Pertemuan7.SeventhActivity
 import com.example.aldo_tie_pertemuan3.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.example.aldo_tie_pertemuan3.Home.pertemuan_9.NinthActivity
+import com.example.aldo_tie_pertemuan3.Home.Pertemuan10.TenthActivity
 
 class HomeFragment : Fragment() {
 
@@ -48,8 +48,8 @@ class HomeFragment : Fragment() {
         binding.btnToSeventh.setOnClickListener {
             startActivity(Intent(requireContext(), SeventhActivity::class.java))
         }
-        binding.btnToNinth.setOnClickListener {
-            startActivity(Intent(requireContext(), NinthActivity::class.java))
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         // Akses "user_pref"

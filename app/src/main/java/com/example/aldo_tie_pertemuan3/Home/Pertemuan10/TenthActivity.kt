@@ -1,4 +1,4 @@
-package com.example.aldo_tie_pertemuan3.Home.pertemuan_9
+package com.example.aldo_tie_pertemuan3.Home.Pertemuan10
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,17 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aldo_tie_pertemuan3.R
-import com.example.aldo_tie_pertemuan3.databinding.ActivityNinthBinding
+import com.example.aldo_tie_pertemuan3.databinding.ActivityTenthBinding
 import com.google.android.material.chip.Chip
 
-class NinthActivity : AppCompatActivity() {
+class TenthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityNinthBinding
+    private lateinit var binding: ActivityTenthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityNinthBinding.inflate(layoutInflater)
+        binding = ActivityTenthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -29,7 +29,7 @@ class NinthActivity : AppCompatActivity() {
         // Toolbar + tombol back
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Ninth"
+            title = "Activity Tenth"
             setDisplayHomeAsUpEnabled(true)
         }
         binding.toolbar.setNavigationOnClickListener { finish() }

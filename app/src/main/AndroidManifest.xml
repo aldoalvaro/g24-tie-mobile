@@ -57,7 +57,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Home.pertemuan_9.NinthActivity"
+            android:name=".Home.Pertemuan10.TenthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
