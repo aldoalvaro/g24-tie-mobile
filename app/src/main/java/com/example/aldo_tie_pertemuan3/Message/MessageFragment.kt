@@ -1,11 +1,17 @@
 package com.example.aldo_tie_pertemuan3.Message
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.aldo_tie_pertemuan3.Message.tutorial.TutorialMessageActivity
+import com.example.aldo_tie_pertemuan3.R
 import com.example.aldo_tie_pertemuan3.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment() {
@@ -40,8 +46,26 @@ class MessageFragment : Fragment() {
         activity.setSupportActionBar(binding.toolbar)
         activity.supportActionBar?.title = "Message"
 
+        // Agar option menu dapat tampil
+        setHasOptionsMenu(true)
+
         val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItems.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {
