@@ -10,6 +10,7 @@ import com.example.aldo_tie_pertemuan3.Home.HomeFragment
 import com.example.aldo_tie_pertemuan3.Message.MessageFragment
 import com.example.aldo_tie_pertemuan3.More.MoreFragment
 import com.example.aldo_tie_pertemuan3.databinding.ActivityBaseBinding
+import com.example.aldo_tie_pertemuan3.Note.NoteFragment
 
 class BaseActivity : AppCompatActivity() {
 
@@ -45,6 +46,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false
